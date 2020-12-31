@@ -11,9 +11,7 @@ pipeline{
 						)
 						echo  ${Nova_versão_pom}
                     }
-				echo  ${params.Nova_versão_pom}
-				echo  ${"params.Nova_versão_pom"}
-				echo  ${"Hello Nova_versão_pom"}
+
 			}
 
 		}
