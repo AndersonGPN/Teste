@@ -41,5 +41,19 @@ pipeline {
                 }
             }
         }
+		stage("Ler variavel"){
+			steps{
+				sh '''
+					while read LINHA; do
+
+					VERSAO_POM ==$(echo $LINHA | awk '{print $1}')
+
+					done < inputData.txt
+					echo "nova_verso_pom=${inputnova_verso_pom}"
+					cat inputData.txt
+						echo $VERSAO_POM
+				'''
+			}
+		}		
     }
 }
