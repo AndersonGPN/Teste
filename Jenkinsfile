@@ -4,16 +4,11 @@ pipeline{
 		stage (parameters) { 
 			steps{
 				script {
-                    def resultParam = input (
-						id: "Insira",
-						message: 'Insira a nova versão do POM',                        
-							parameters: [
-								string (name: 'Nova_versão_pom', 
-								string: [''].join('\n'), 
-								description: '2.xx.0.ATUAL+1-squad_sprint_ATUAL-SNAPSHOT'
-								)
-							]
-						)						
+                    def resultParam = input id: 'VersaoPom', 
+					message: 'Insira valor', 
+					parameters: [string(defaultValue: '', 
+					description: '''Será a nova versão do pom
+						2.xx.0.ATUAL+1-squad_sprint_ATUAL-SNAPSHOT''', name: 'nova_versao_pom', trim: true)]			
                     }
 					println resultParam
 			}
