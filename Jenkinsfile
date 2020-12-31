@@ -20,7 +20,7 @@ pipeline {
                                     string(defaultValue: 'None',
                                             description: '2.xx.0.ATUAL+1-squad_sprint_ATUAL-SNAPSHOT',
                                             name: 'nova_verso_pom'),
-                                    string(defaultValue: 'None',
+                                    string(defaultValue: '-SNAPSHOT',
                                             description: 'Test Info file',
                                             name: 'Test'),
                             ])
@@ -32,12 +32,6 @@ pipeline {
                     // Echo to console
                     echo("IQA Sheet Path: ${inputnova_verso_pom}")
                     echo("Test Info file path: ${inputTest}")
-
-                    // Write to file
-                    writeFile file: "inputData.txt", text: "nova_verso_pom=${inputnova_verso_pom}\r\nTest=${inputTest}"
-
-                    // Archive the file (or whatever you want to do with it)
-                    archiveArtifacts 'inputData.txt'
                 }
             }
         }
