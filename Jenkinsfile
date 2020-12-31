@@ -11,7 +11,7 @@ pipeline{
 						
 						echo  ${Nova_versão_pom}
                     }
-				echo  ${"INPUT_PARAMS.Nova_versão_pom"}
+			
 			}
 
 		}
