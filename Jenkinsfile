@@ -9,13 +9,13 @@ pipeline{
 							parameters: [
                             string (name: 'Nova_versão_pom', string: [''].join('\n'), description: '2.xx.0.ATUAL+1-squad_sprint_ATUAL-SNAPSHOT')]
 						)
-						
+						echo  ${Nova_versão_pom}
                     }
-					echo  ${Nova_versão_pom}
+				echo  ${params.Nova_versão_pom}
+				echo  ${"params.Nova_versão_pom"}
+				echo  ${"Hello Nova_versão_pom"}
 			}
-			echo  ${params.Nova_versão_pom}
-			echo  ${"params.Nova_versão_pom"}
-			echo  ${"Hello Nova_versão_pom"}
+
 		}
 		
 
