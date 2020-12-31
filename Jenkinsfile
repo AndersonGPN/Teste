@@ -34,7 +34,7 @@ pipeline {
                     echo("Test Info file path: ${inputTest}")
 
                     // Write to file
-                    writeFile file: "inputData.txt", text: "nova_verso_pom=${inputnova_verso_pom}\r\nTest=${inputTest}"
+                    writeFile file: "inputData.txt", text: "nova_verso_pom=${inputnova_verso_pom}${inputTest}"
 
                     // Archive the file (or whatever you want to do with it)
                     archiveArtifacts 'inputData.txt'
